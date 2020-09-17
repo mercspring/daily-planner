@@ -13,7 +13,15 @@ textarea{
   padding: 10px;
   width: 100%;
   height: 100%;
+  position: relative;
   /* background-color: green; */
+}
+.unsaved:after{
+  content: "unsaved changes";
+  color: maroon;
+  position: absolute;
+  right: 2px;
+  top: 2px
 }
 
 .jumbotron {

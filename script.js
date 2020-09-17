@@ -70,11 +70,15 @@ timeSlots.forEach(function (hour) {
 $('.saveBtn').on("click", function(){
     var today = moment().format('L');
     var hour = $(this).attr('data-hour');
-    console.log(hour);
-    console.log($(`#${hour}`).val());
+    // console.log($(`#${hour}`).val());
+    $(`#${hour}`).parent().removeClass("unsaved")
     savedEntries[hour] = $(`#${hour}`).val();
     savedEntries["daySaved"] = today; 
     localStorage.setItem(today,JSON.stringify(savedEntries));
+})
+
+$('textarea').on("change", function(){
+    $(this).parent().addClass("unsaved");
 })
 
 
